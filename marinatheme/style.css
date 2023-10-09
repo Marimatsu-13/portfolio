@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "Montserrat" ;
+	src:
+		url("fonts/Montserrat-VariableFont_wght.ttf") format('truetype');
+}
+
+body {
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: "Montserrat" ;
+}
+
+a{
+    text-decoration: none;
+    color: #8093f1;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 3px ;
+}
+
+a:hover{
+    background: #ffc8dd;
+    transition: 300ms;
+}
+
+ul{
+    list-style: none;
+}
+
+h1.post-title{
+display: none;
+}
+
+/* Navbar */
+
+.menu {
+    background-color: #ff0a54;
+    height: 80px;
+    width: 100%;
+  }
+
+.menu ul{
+    text-align: center;
+  }
+
+.menu ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+/* Burger */
+
+.menu-toggle {
+    position: absolute;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 20px;
+    display: none;
+}
+
+.bar1 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: transform 300ms ease-in-out;
+}
+
+.bar2{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.bar3{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: transform 300ms ease-in-out;
+}
+
+.bar1.active{
+    transform:rotate(45deg);
+    position: absolute;
+    top: 5px;
+    transition: transform 300ms ease-in-out;
+
+}
+
+.bar2.active{
+    opacity: 0;
+}
+.bar3.active{
+    transform:rotate(-45deg);
+    transition: transform 300ms ease-in-out;
+
+}
+
+/* Responsive Navbar */
+
+@media screen and (max-width: 768px) {
+.menu ul{
+    margin-top: 80px;
+    display: flex;
+    float: none;
+    position: fixed;
+    z-index: 9;
+    background-color: rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    top: -1300px;
+    transition: 300ms;
+}
+
+.menu ul.active{
+    top:45px;
+    transition: 300ms;
+}
+
+.menu-toggle{
+    display: block;
+}
+
+.active#menu-items ul{
+    transform: translateX(0px);
+    transition-duration: 300ms;
+}
+
+}
