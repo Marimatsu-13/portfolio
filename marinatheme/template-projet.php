@@ -24,7 +24,6 @@
 $args = array(
     'post_type' => 'projets',
     'posts_per_page' => 12,
-    'paged' => 1,
 );?>
 
 <?php 
@@ -32,22 +31,28 @@ $args = array(
 
 if ($my_query->have_posts()) : ?>
 <div class= "publication-list">
+
 <?php
     while ($my_query->have_posts()) : $my_query->the_post();
-        if (has_post_thumbnail()) {
             the_post_thumbnail('miniature-personnalisee2');
-        }
-        
-    endwhile;?>
-    </div>
+        ?>
+
+
+<?php endwhile;?>
+</div>
 <?php endif;
+wp_reset_postdata();
 ?>
 </div>
 </div>
 </div>
 </div>
 </div>
+</div>
 <?php endwhile; ?>
-<?php endif; ?>
+<?php endif; 
+
+
+?>
 </div>
 <?php get_footer(); ?>

@@ -48,6 +48,7 @@ window.onload = () =>{
   
 /* Filtre */
 
+// Fonction pour récupérer les catégories
 document.addEventListener('DOMContentLoaded', function() {
     let categorySelect = document.getElementById('category-select');
 
@@ -75,16 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       function fetchPosts(category) {
-        let data = new FormData();
-        data.append('action', 'filter_posts');
-        data.append('category', category);
-
+        
         let requestData = {
             action: "filter_posts",
             category: category,};
          let url = new URLSearchParams(requestData);
-
-        fetch('wp-admin/admin-ajax.php', {
+console.log(requestData);
+        fetch('http://localhost:10040/wp-admin/admin-ajax.php', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
@@ -97,7 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
               const postsContainer = document.querySelector('.publication-list');
               postsContainer.textContent = ''; 
               postsContainer.insertAdjacentHTML('beforeend', data.html);  
+              Lightbox.init();
             })
             .catch(error => console.error('Error fetching posts:', error));
         }
-})
+});

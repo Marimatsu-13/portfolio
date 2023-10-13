@@ -60,7 +60,7 @@ class Lightbox {
     
         dom.appendChild(container);
 
-     
+        currenteye(dom,this.currentIndex);
   
       return dom;
       }

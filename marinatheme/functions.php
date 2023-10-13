@@ -66,6 +66,15 @@ function filter_posts()
 {
 	$category = $_POST['category'];
 
+	
+	if(($category == '')){
+        $args = array(
+			'post_type' => 'projets',
+			'posts_per_page' => 12,
+		);
+
+	}
+	else{
 	$args = array(
 	  'post_type' => 'projets',
 	  'posts_per_page' => 12,
@@ -78,7 +87,7 @@ function filter_posts()
 		  'operator' => 'IN'
 		)
 	),
-	);
+	);}
 	
   
 	$posts = new WP_Query($args);
@@ -89,6 +98,8 @@ function filter_posts()
 	  while ($posts->have_posts()) {
 		$posts->the_post();
 		echo get_the_post_thumbnail();
+		echo the_title();
+		echo the_content();
 	  }
 	} else {
 	  echo 'No posts found.';
@@ -97,8 +108,12 @@ function filter_posts()
 	wp_reset_postdata();
   
 	$response = array('html' => ob_get_clean());
+
 	wp_send_json($response);
+echo('toto');
+    echo $response;
 	wp_die();
+
 }
 
 add_action('wp_ajax_filter_posts', 'filter_posts');
