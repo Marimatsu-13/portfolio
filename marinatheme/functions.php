@@ -5,6 +5,7 @@ function theme_scripts()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script( 'script', get_template_directory_uri() . '/script.js', array(), '1.0.0', true );
+	wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 }
 add_action('wp_enqueue_scripts', 'theme_scripts');
 
@@ -60,6 +61,8 @@ function custom_image_sizes()
 }
 
 add_action('after_setup_theme', 'custom_image_sizes');
+
+// Filtre
 
 function filter_posts() 
 {
@@ -120,3 +123,4 @@ echo('toto');
 
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
+
