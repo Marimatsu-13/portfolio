@@ -3,10 +3,8 @@
  * Template Name: Projets
  */
 ?>
-<div id="preloader"></div>
-<div class="transition transition-1 is-active">
-</div>
 <?php get_header(); ?>
+<div id="preloader"></div>
 <div class="main page">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -34,9 +32,13 @@ if ($my_query->have_posts()) : ?>
 
 <?php
     while ($my_query->have_posts()) : $my_query->the_post();
-            the_post_thumbnail('miniature-personnalisee2');
-        ?>
+        // Obtenir l'URL de la miniature
+        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'miniature-personnalisee2');
+        $post_url = get_permalink();
 
+        // Afficher la miniature avec un lien vers l'article
+        echo '<a href="' . esc_url($post_url) . '"><img src="' . esc_url($thumbnail_url) . '"></a>';
+        ?>
 
 <?php endwhile;?>
 </div>

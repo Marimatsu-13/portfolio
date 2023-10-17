@@ -5,7 +5,6 @@ function theme_scripts()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script( 'script', get_template_directory_uri() . '/script.js', array(), '1.0.0', true );
-    wp_enqueue_script( 'lightbox-script', get_template_directory_uri() . '/lightbox.js', array(), '1.0.0', true );
 }
 add_action('wp_enqueue_scripts', 'theme_scripts');
 
@@ -97,9 +96,12 @@ function filter_posts()
 	if ($posts->have_posts()) {
 	  while ($posts->have_posts()) {
 		$posts->the_post();
-		echo get_the_post_thumbnail();
-		echo the_title();
-		echo the_content();
+		// Obtenez l'URL de la miniature
+        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'miniature-personnalisee2');
+        $post_url = get_permalink();
+
+        // Affichez la miniature avec un lien vers l'article
+        echo '<a href="' . esc_url($post_url) . '"><img src="' . esc_url($thumbnail_url) . '"></a>';
 	  }
 	} else {
 	  echo 'No posts found.';

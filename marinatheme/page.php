@@ -1,12 +1,10 @@
-<div id="preloader"></div>
-<div class="transition transition-1 is-active">
-</div>
 <?php get_header(); ?>
+<div id="preloader"></div>
 <div class="main page">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 <div class="post">
-<div class="post-content">
+<div class="post-content post-accueil">
 <?php the_content(); ?>
 
 </div>

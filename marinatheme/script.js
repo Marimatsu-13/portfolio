@@ -22,29 +22,7 @@ window.addEventListener("load", function(){
     loader.style.display="none";
 });
 
-/* Page transition */
 
-window.onload = () =>{
-    let transitionEl = document.querySelector(".transition");
-    let anchors = document.querySelectorAll("a");
-    setTimeout(()=>{
-        transitionEl.classList.remove("is-active");
-    },500);
-
-    for (let i = 0; i< anchors.length; i++){
-      let anchor = anchors[i];
-
-      anchor.addEventListener("click",e =>{
-            let target = e.target.href;
-            transitionEl.classList.add("is-active");
-
-            setTimeout(()=>{
-                window.location.href = target ;
-            },500);
-      });
-    }
-}
-  
   
 /* Filtre */
 
