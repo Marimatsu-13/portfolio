@@ -210,7 +210,7 @@ background: #a2d2ff;
 .container{
     max-width: 700px;
     width: 100%;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.521);
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.4);
@@ -393,6 +393,21 @@ textarea{
   #category-select option:hover{
     background: #fff;
     color: #2a2a2a;
+  }
+
+  @media screen and (max-width: 510px) {
+    #category-select{
+        position: relative;
+        left: -100;
+    }
+
+  }
+  @media screen and (max-width: 384px) {
+    #category-select{
+        position: relative;
+        left: -165;
+    }
+
   }
 
 /* Page Projets */
