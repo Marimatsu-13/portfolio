@@ -3,9 +3,8 @@
  * Template Name: Info
  */
 ?>
-
-<?php get_header(); ?>
 <div id="preloader"></div>
+<?php get_header(); ?>
 <div class="main page">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -15,7 +14,6 @@
 <div class="box">
     <div class="card">
         <div class="percent html" style="--clr:#04fc43;">
-            <div class="dot html"></div>
             <svg>
                 <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -28,7 +26,6 @@
     </div>
     <div class="card">
         <div class="percent css" style="--clr:#04fc43;">
-            <div class="dot css"></div>
             <svg>
                 <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -41,7 +38,6 @@
     </div>
     <div class="card">
         <div class="percent php" style="--clr:#04fc43;">
-            <div class="dot php"></div>
             <svg>
                 <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -54,7 +50,6 @@
     </div>
     <div class="card">
         <div class="percent js" style="--clr:#04fc43;">
-            <div class="dot js"></div>
             <svg>
                 <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70"></circle>

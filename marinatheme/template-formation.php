@@ -3,8 +3,8 @@
  * Template Name: Formation
  */
 ?>
-<?php get_header(); ?>
 <div id="preloader"></div>
+<?php get_header(); ?>
 <div class="main page">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>

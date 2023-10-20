@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
             action: "filter_posts",
             category: category,};
          let url = new URLSearchParams(requestData);
-console.log(requestData);
         fetch('http://localhost:10040/wp-admin/admin-ajax.php', {
             method: 'POST',
             headers: {
