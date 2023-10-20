@@ -169,12 +169,12 @@ background: #a2d2ff;
 /* Responsive Navbar */
 
 @media screen and (max-width: 768px) {
+
 #menu ul{
     margin-top: 80px;
     display: flex;
     float: none;
     position: fixed;
-    z-index: 9;
     background-color: rgba(0,0,0,0.8);
     height: 100%;
     width: 100%;
@@ -184,15 +184,21 @@ background: #a2d2ff;
 }
 
 #menu ul.active{
-    top:45px;
+    position: absolute;
+    top:1;
     transition: 300ms;
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100%;
+    z-index: 1000000;
+
 }
 
 .menu-toggle{
     display: block;
 }
 
-.active#menu-items ul{
+.menu-items.active ul{
     transform: translateX(-20px);
     transition-duration: 300ms;
 }
@@ -303,7 +309,7 @@ textarea{
 
 @media screen and (max-width: 584px) {
     .container{
-        max-width:100% ;
+        max-width:50% ;
     }
 
     .input-box{
@@ -480,9 +486,16 @@ p.Accueil{
 /* Responsive Glass page */
 
 @media screen and (max-width: 1200px) {
+
+.post{
+    position: relative;
+    z-index: -1;
+}
+
 .post-content{
     position: relative;
     width: calc(100% -20px);
+    z-index: 1;
 }
 }
 
@@ -491,13 +504,16 @@ p.Accueil{
         flex-direction: column;
         height: auto;
         padding: 20px;
+        z-index: 1;
     }
     .wp-block-image img{
         max-width: 200px;
+        z-index: 1;
     }
     .wp-block-image{
         position: relative;
         top: -100px;
+        z-index: 1;
     }
     }
 
@@ -721,7 +737,7 @@ footer{
 
 /* Responsive Timeline */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .timeline{
         margin: 50px auto;
     }
